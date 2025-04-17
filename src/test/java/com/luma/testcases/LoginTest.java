@@ -40,7 +40,7 @@ boolean messageOfRequiredField=
     boolean messageErrorOfPasswordDisplayed= loginPage
                 .load()
                 .invalidLogin("hendadelmonergmail.com","Hendadel123")
-            .errorMessageOfPasswordFieldDisplayed();
+            .errorMessageOfFormatEmail();
         Assert.assertTrue(messageErrorOfPasswordDisplayed);
     }
 
