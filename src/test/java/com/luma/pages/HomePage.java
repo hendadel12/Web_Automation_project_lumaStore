@@ -11,15 +11,21 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    // تعريف العناصر باستخدام PageFactory
+
     @FindBy(css = "[id=\"option-label-size-143-item-166\"]")
     private WebElement size;
+    @FindBy(xpath = "//*[@id=\"option-label-size-143-item-166\"]")
+    private WebElement size1;
 
     @FindBy(css = "[id=\"option-label-color-93-item-50\"]")
     private WebElement color;
+    @FindBy(xpath = "//*[@id=\"option-label-color-93-item-52\"]")
+    private WebElement color1;
+
 
     @FindBy(xpath = "//*[@id='maincontent']/div[3]/div/div[2]/div[5]/div/div/ol/li[1]/div/div/div[4]/div/div[1]/form/button/span")
     private WebElement addtoCart;
+
     @FindBy(xpath = "//*[@id=\"maincontent\"]/div[3]/div/div[2]/div[5]/div/div/ol/li[3]/div/a/span/span/img")
     private WebElement img;
 

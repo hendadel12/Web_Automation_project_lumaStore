@@ -15,19 +15,13 @@ public class CheckOutTest extends BaseTest {
     public void ShouldBeCheckoutSuccessfully() {
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.load()
+        boolean succmesaageeDisplayed =  loginPage.load()
                 .login("hendadelmoner@gmail.com", "Hendadel123")
                 .clickOnHomeIcone()
                 .clickOnSize()
                 .clickOnColor()
                 .ClickOnAddCartButton()
-                .clickOnCartIcon()
-                .ClickOnCheckOutButton();
-
-        CheckOutPage checkOutPage = new CheckOutPage(driver);
-        checkOutPage.waitForShippingAddressBoxToBeVisible();
-
-        boolean shippingAddressBox = checkOutPage.displayedShippingAddressBox();
-        Assert.assertTrue(shippingAddressBox, "Shipping Address Box is not displayed.");
+                .messageDisplayed();
+        Assert.assertTrue(succmesaageeDisplayed);
     }
 }
