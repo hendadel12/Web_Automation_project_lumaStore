@@ -6,5 +6,20 @@ on:
 
 jobs:
   test:
-  
+    runs-on: windows-latest
 
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Java 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: "11"
+          cache: maven
+
+      - name: Setup Chrome
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Run Selenium Tests with Maven
+        run: mvn clean test
